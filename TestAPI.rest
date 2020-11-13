@@ -1,0 +1,52 @@
+GET http://localhost:5000/api/commands
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbmlzIiwiZW1haWwiOiJhbmlzQGxpdmUuY29tIiwianRpIjoiMTI2ZjEwMzItZWQ5Ni00OWViLTlmYzMtMDJjYzc2ZWRmMmNjIiwiZXhwIjoxNjA1Mjg0ODM1LCJpc3MiOiJjMDMzMmNjNmE3MmU0NjQ5YWY1YTBiZGE0NjhjNmY4ZSIsImF1ZCI6ImMwMzMyY2M2YTcyZTQ2NDlhZjVhMGJkYTQ2OGM2ZjhlIn0._JaK3R_6W_7Fz-o2G-F-8zmJVyiS3PJHZQELQykA7vw
+
+###
+GET http://localhost:5000/api/commands/2
+
+###
+GET http://localhost:5000/api/commands/for/c#
+
+###
+POST http://localhost:5000/api/commands
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbmlzIiwiZW1haWwiOiJhbmlzQGxpdmUuY29tIiwianRpIjoiMmQ3ODE2NzktNDU5OC00NzY0LTgyYTEtNzUwMWMxMGY1NGI5IiwiZXhwIjoxNjA1MDE2NDIzLCJpc3MiOiJjMDMzMmNjNmE3MmU0NjQ5YWY1YTBiZGE0NjhjNmY4ZSIsImF1ZCI6ImMwMzMyY2M2YTcyZTQ2NDlhZjVhMGJkYTQ2OGM2ZjhlIn0.qYeyYFUXk943_GDf6Sbiw0nWhGbUcmup3t0rrhSCnPc
+
+{
+  "howTo": "Login To Microsoft SQL in Docker Container",
+  "line": "docker exec -it 5ea5a717407e /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Az@123456",
+  "platform": "Docker"
+}
+
+###
+PUT http://localhost:5000/api/commands/8
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbmlzIiwiZW1haWwiOiJhbmlzQGxpdmUuY29tIiwianRpIjoiMmQ3ODE2NzktNDU5OC00NzY0LTgyYTEtNzUwMWMxMGY1NGI5IiwiZXhwIjoxNjA1MDE2NDIzLCJpc3MiOiJjMDMzMmNjNmE3MmU0NjQ5YWY1YTBiZGE0NjhjNmY4ZSIsImF1ZCI6ImMwMzMyY2M2YTcyZTQ2NDlhZjVhMGJkYTQ2OGM2ZjhlIn0.qYeyYFUXk943_GDf6Sbiw0nWhGbUcmup3t0rrhSCnPc
+
+
+{
+  "howTo": "Run Microsoft SQL in Docker Container",
+  "line": "docker run -e \"ACCEPT_EULA=Y\" -e \"SA_PASSWORD=Az@123456\" -e \"MSSQL_PID=Express\" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu",
+  "platform": "Docker"
+}
+
+###
+Patch http://localhost:5000/api/commands/9
+Content-Type: application/json
+
+[{
+  "op":"replace",
+  "path": "/line",
+  "value": "docker inspect {container Id}"
+}]
+
+###
+Delete http://localhost:5000/api/commands/9
+
+
+###
+GET http://localhost:5000/api/token?username=anis&password=123
+
+###
+POST http://localhost:5000/api/token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbmlzIiwiZW1haWwiOiJhbmlzQGxpdmUuY29tIiwianRpIjoiMTlmMmU2MGYtZDZlOS00NjkyLWJhMjMtMDRhZWE1NzQ1YWJiIiwiZXhwIjoxNjA0OTA3NzE5LCJpc3MiOiJjMDMzMmNjNmE3MmU0NjQ5YWY1YTBiZGE0NjhjNmY4ZSIsImF1ZCI6ImMwMzMyY2M2YTcyZTQ2NDlhZjVhMGJkYTQ2OGM2ZjhlIn0.nzwLHbnDJwSRvAKkvSsKhsJLjMfr7jNEIBSKrk-RR-c
