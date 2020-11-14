@@ -12,6 +12,11 @@ terraform {
     }
 }
 
+variable "imagebuild" {
+  type        = string
+  description = "Latest Image Build"
+}
+
 resource "azurerm_resource_group" "terraform_codecmdapi" {
   name = "terraform_rg_codecmdapi"
   location = "Southeast Asia"
@@ -28,7 +33,7 @@ resource "azurerm_container_group" "terraform_container_codecmdapi" {
 
   container {
       name            = "codecmdapi"
-      image           = "azzulhisham/codecmdapi:5"
+      image           = "azzulhisham/codecmdapi:${var.imagebuild}"
         cpu             = "1"
         memory          = "1"
 
