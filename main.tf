@@ -12,7 +12,7 @@ terraform {
     }
 }
 
-resource "azurerm_resource_group" "terraform_rg_codecmdapi" {
+resource "azurerm_resource_group" "terraform_codecmdapi" {
   name = "terraform_rg_codecmdapi"
   location = "Southeast Asia"
 }
