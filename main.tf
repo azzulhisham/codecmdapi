@@ -28,7 +28,7 @@ resource "azurerm_container_group" "terraform_container_codecmdapi" {
 
   container {
       name            = "codecmdapi"
-      image           = "azzulhisham/codecmdapi:latest"
+      image           = "azzulhisham/codecmdapi:5"
         cpu             = "1"
         memory          = "1"
 
