@@ -3,6 +3,15 @@ provider "azurerm" {
     features {}
 }
 
+terraform {
+    backend "azurerm" {
+        resource_group_name  = "terraform_rg_blobstorage"
+        storage_account_name = "terraformblobcodecmdapi"
+        container_name       = "terraformstate"
+        key                  = "terraform.tfstate"
+    }
+}
+
 resource "azurerm_resource_group" "terraform_codecmdapi" {
   name = "terraform_rg_codecmdapi"
   location = "Southeast Asia"
